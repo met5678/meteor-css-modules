@@ -95,7 +95,7 @@ export default class ScssProcessor {
       indentedSyntax: sourceFile.file.getExtension() === 'sass',
       outFile: `.${sourceFile.file.getBasename()}`,
       importer: this._importFile.bind(this, sourceFile),
-      includePaths: [],
+      includePaths: this.pluginOptions.sassIncludePaths || [],
       file: sourceFile.path,
       data: sourceFile.contents
     };
